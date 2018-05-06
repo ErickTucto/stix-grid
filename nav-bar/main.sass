@@ -1,0 +1,27 @@
+.nav-bar
+  padding: 0
+  // height: 48px
+  grid-column: start / end
+  display: grid
+  grid-template-columns: [start] 1fr [center] auto 1fr [end]
+
+  > *
+    margin: 0
+    padding: 0
+
+  .left, .center, .right
+    grid-row: 1
+  .left
+    padding-left: 16px
+    justify-self: start
+    grid-column: start / center
+  .center
+    padding-left: 16px
+    padding-right: 16px
+    justify-self: stretch
+    grid-column: center / span 1
+  .right
+    padding-right: 16px
+    justify-self: end
+    background: purple
+    grid-column: span 1 / end

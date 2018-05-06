@@ -1,0 +1,10 @@
+.grid
+  display: grid
+  grid-gap: 10px
+  grid-template-columns: [start] repeat(12, 1fr) [end]
+
+.grid > *
+  padding: 24px
+
+.col-all
+  grid-column: start / end

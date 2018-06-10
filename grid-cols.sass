@@ -1,10 +1,50 @@
-.grid
-  display: grid
-  grid-gap: 10px
-  grid-template-columns: [start] repeat(12, 1fr) [end]
+@for $i from 1 through 12
+  .grid-#{$i}
+    display: grid
+    grid-gap: 10px
+    grid-template-columns: [start] repeat(#{$i}, 1fr) [end]
+    background: red
 
-.grid > *
-  padding: 24px
+  .grid-#{$i} > *
+    padding: 24px
 
 .col-all
-  grid-column: start / end
+  grid-column-start: start
+  grid-column-end: end
+
+@for $i from 1 through 12
+  @media (max-width: 576px)
+    .col-#{$i}-mobile
+      grid-column-end: span #{$i}
+  .col-all-mobile
+    grid-column-start: start
+    grid-column-end: end
+
+@for $i from 1 through 12
+  @media (min-width: 768px)
+    .col-#{$i}-tablet
+      grid-column-end: span #{$i}
+  .col-all-tablet
+    grid-column-start: start
+    grid-column-end: end
+
+@for $i from 1 through 12
+  @media (min-width: 960px)
+    .col-#{$i}-desktop
+      grid-column-end: span #{$i}
+  .col-all-desktop
+    grid-column-start: start
+    grid-column-end: end
+
+@for $i from 1 through 12
+  @media (min-width: 1200px)
+    .col-#{$i}-widescreen
+      grid-column-end: span #{$i}
+  .col-all-widescreen
+    grid-column-start: start
+    grid-column-end: end
+
+@media (min-width: 1440px)
+  @for $i from 1 through 12
+    .col-#{$i}
+      grid-column-end: span #{$i}

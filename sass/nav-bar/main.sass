@@ -1,0 +1,40 @@
+.nav-bar
+  display: grid
+  grid-template-columns: [start] 1fr [center] auto 1fr [end]
+  grid-column: start / end
+  padding: 0
+  button.close
+    display: none
+  .left, .center, .right
+    display: block
+    grid-row: 1
+  .left
+    padding-left: 16px
+    justify-self: start
+    grid-column: start / center
+  .center
+    padding-left: 16px
+    padding-right: 16px
+    justify-self: stretch
+    grid-column: center / span 1
+  .right
+    padding-right: 16px
+    justify-self: end
+    grid-column: span 1 / end
+
+@media (max-width: 768px)
+  .nav-bar
+    display: grid
+    grid-template-columns: [start] 1fr [end]
+    .left, .center, .right
+      display: none
+      padding: 0
+      grid-row: auto
+      grid-column-start: start
+      grid-column-end: end
+    button.close
+      display: block
+      align-self: center
+      justify-self: end
+    .show
+      display: block

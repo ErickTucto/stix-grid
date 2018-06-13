@@ -1,0 +1,22 @@
+.nav-bar
+  .list
+    display: grid
+    grid-template-columns: [start] 1fr [end]
+    height: 100%
+    margin: 0
+    grid-auto-flow: column
+    li
+      color: #666666
+      display: grid
+      align-items: center
+      padding: 0 16px
+      &:hover
+        color: white
+        background: #666666
+@media (max-width: 768px)
+  .nav-bar
+    .list
+      li
+        padding: 12px 12px
+        grid-column-start: start
+        grid-column-end: end

@@ -13,6 +13,15 @@
       &:hover
         color: white
         background: #666666
+    &.no-hover
+      li
+        &:hover
+          background: none
+  .list-group
+    display: grid
+    grid-auto-flow: column
+    align-items: center
+
 @media (max-width: 768px)
   .nav-bar
     .list

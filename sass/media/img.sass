@@ -3,31 +3,11 @@
   padding: 8px
   img
     align-self: center
-
-.img-32-32
-  img
-    width: 32px
-    height: 32px
-
-.img-48-48
-  img
-    width: 48px
-    height: 48px
-
-.img-56-56
-  img
-    width: 56px
-    height: 56px
-
-.img-64-64
-  img
-    width: 64px
-    height: 64px
-
-.img-72-72
-  img
-    width: 72px
-    height: 72px
+@for $i from 1 through 12
+  .img-#{$i * 4}-#{$i * 4}
+    img
+      width: #{$i * 4}px
+      height: #{$i * 4}px
 
 .img-circle
   img

@@ -1,15 +1,20 @@
 @for $i from 1 through 12
   .grid-#{$i}
     display: grid
-    grid-gap: 10px
     grid-template-columns: [start] repeat(#{$i}, 1fr) [end]
 
   .grid-#{$i} > *
     padding: 24px
+  .narrow > *
+    padding: 0
+
 
 @for $i from 1 through 12
   .col-#{$i}
     grid-column-end: span #{$i}
+  .offset-#{$i}
+    grid-column-end: span #{$i}
+
 .col-all
   grid-column-start: start
   grid-column-end: end
@@ -22,3 +27,21 @@
     .col-all#{$media}
       grid-column-start: start
       grid-column-end: end
+
+.v-center
+  align-self: center
+
+.v-left
+  align-self: start
+
+.v-right
+  align-self: end
+
+.h-center
+  justify-self: center
+
+.h-left
+  justify-self: start
+
+.h-right
+  justify-self: end

@@ -6,13 +6,38 @@
     margin: 0
     grid-auto-flow: column
     li
-      color: #666666
+      grid-template-rows: [start] 1fr 4px [end]
       display: grid
-      align-items: center
-      padding: 0 16px
+      a
+        align-self: center
+        padding: 0 16px
+        color: #D6A6FF
+        //color: #666666
       &:hover
-        color: white
-        background: #666666
+        //background: #666666
+        a
+          text-decoration: none
+        &:after
+          align-self: end
+          content: ''
+          display: block
+          width: auto
+          height: 4px
+          background: #D6A6FF
+      
+    .active
+      //background: #D6A6FF
+      //background: #666666
+      //color: white
+      &:after
+        align-self: end
+        content: ''
+        display: block
+        width: auto
+        height: 4px
+        background: #D6A6FF
+      a
+        //color: white
     &.no-hover
       li
         &:hover

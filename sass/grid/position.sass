@@ -1,0 +1,21 @@
+$mapa: (me: self, items: items)
+@each $prefixClass, $ref in $mapa
+  .#{$prefixClass}-center
+    justify-#{$ref}: center
+    align-#{$ref}: center
+
+  .#{$prefixClass}-v-middle
+    align-#{$ref}: center
+
+  .#{$prefixClass}-h-middle
+    justify-#{$ref}: center
+
+  .#{$prefixClass}-up
+    align-#{$ref}: start
+
+  .#{$prefixClass}-left
+    justify-#{$ref}: start
+
+  .#{$prefixClass}-right
+    justify-#{$ref}: end
+

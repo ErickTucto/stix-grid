@@ -11,10 +11,8 @@
       a
         align-self: center
         padding: 0 16px
-        color: #D6A6FF
-        //color: #666666
+        color: $purple-light
       &:hover
-        //background: #666666
         a
           text-decoration: none
         &:after
@@ -23,25 +21,16 @@
           display: block
           width: auto
           height: 4px
-          background: #D6A6FF
+          background: $purple-light
       
     .active
-      //background: #D6A6FF
-      //background: #666666
-      //color: white
       &:after
         align-self: end
         content: ''
         display: block
         width: auto
         height: 4px
-        background: #D6A6FF
-      a
-        //color: white
-    &.no-hover
-      li
-        &:hover
-          background: none
+        background: $purple-light
   .list-group
     display: grid
     grid-auto-flow: column
@@ -49,8 +38,9 @@
 
 @media (max-width: 768px)
   .nav-bar
-    .list
-      li
-        padding: 12px 12px
-        grid-column-start: start
-        grid-column-end: end
+    *:not(.show-bar)
+      .list
+        li
+          padding: 12px 12px
+          grid-column-start: start
+          grid-column-end: end

@@ -6,9 +6,11 @@
     margin: 0
     grid-auto-flow: column
     li
-      grid-template-rows: [start] 1fr 4px [end]
       display: grid
+      grid-template-rows: [start] 1fr 4px [end]
+      grid-template-columns: [start] 4px [content] 1fr [end]
       a
+        grid-column: start / end
         align-self: center
         padding: 0 16px
         color: $purple-light
@@ -16,16 +18,16 @@
         a
           text-decoration: none
         &:after
-          align-self: end
           content: ''
           display: block
+          grid-column: start / end
           width: auto
           height: 4px
           background: $purple-light
       
     .active
       &:after
-        align-self: end
+        grid-column: start / end
         content: ''
         display: block
         width: auto
@@ -41,6 +43,20 @@
     *:not(.show-bar)
       .list
         li
-          padding: 12px 12px
-          grid-column-start: start
-          grid-column-end: end
+          grid-column: start / end
+          a
+            padding: 12px 0px 12px 12px
+            grid-column: content / end
+            grid-row: start / end
+          &:hover
+            &:after
+              grid-column: start / content
+              grid-row: start / end
+              height: 100%
+        .active:after
+          grid-column: start / content
+          grid-row: start / end
+          content: ''
+          width: 4px
+          height: 100%
+          background: $purple-light

@@ -1,4 +1,4 @@
-@for $i from 1 through 12
+@for $i from 1 through $max-col
   .grid-#{$i}
     display: grid
     grid-template-columns: [start] repeat(#{$i}, 1fr) [end]
@@ -9,7 +9,7 @@
     padding: 0
 
 
-@for $i from 1 through 12
+@for $i from 1 through $max-col
   .col-#{$i}
     grid-column-end: span #{$i}
   .offset-#{$i}

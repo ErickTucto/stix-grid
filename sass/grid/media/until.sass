@@ -1,0 +1,10 @@
+@each $viewport, $breakpoints in $viewports
+  $maxViewport: map-get($breakpoints, "max")
+  $minViewport: map-get($breakpoints, "min")
+  @media (max-width: $maxViewport)
+    @for $i from 1 through $max-col
+      .col-#{$i}-until-#{$viewport}
+        grid-column-end: span #{$i}
+    .col-all-until-#{$viewport}
+      grid-column-start: start
+      grid-column-end: end

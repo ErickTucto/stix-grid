@@ -19,11 +19,22 @@
   grid-column-start: start
   grid-column-end: end
 
-@each $media, $width in (-mobile, 576px), (-tablet, 768px), (-desktop, 960px), (-widescreen, 1200px), (-fullhd, 1440px)
+@each $media, $width in (-fullhd, 1440px), (-widescreen, 1200px), (-desktop, 960px), (-tablet, 768px), (-mobile, 576px)
   @media (min-width: #{$width})
-    @for $i from 1 through 12
+    @for $i from 1 through $max-col
       .col-#{$i}#{$media}
         grid-column-end: span #{$i}
     .col-all#{$media}
       grid-column-start: start
       grid-column-end: end
+  @media (max-width: #{$width})
+    @for $i from 1 through $max-col
+      .col-#{$i}-on#{$media}
+        grid-column-end: span #{$i}
+    .col-all-on#{$media}
+      grid-column-start: start
+      grid-column-end: end
+  @media (max-width: #{$width})
+    .hide-on#{$media}
+      padding: 0px !important
+      display: none

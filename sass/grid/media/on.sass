@@ -1,0 +1,17 @@
+@each $viewport, $breakpoints in $viewports
+  $maxViewport: map-get($breakpoints, "max")
+  $minViewport: map-get($breakpoints, "min")
+  @media (min-width: $minViewport) and (max-width: $maxViewport)
+    @for $i from 1 through $max-col
+      .col-#{$i}-on-#{$viewport}
+        grid-column-end: span #{$i}
+    .col-all-#{$viewport}
+      grid-column-start: start
+      grid-column-end: end
+/* ##Device = Tablets ##Screen = B/w 768px to 1024px */
+
+ /* @media (min-width: 768px) and (max-width: 1024px) */
+
+/* ##Device = Mobile ##Screen = B/w 320px to 767px */
+
+/* @media (min-width: 320px) and (max-width: 767px)*/

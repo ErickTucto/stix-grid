@@ -1,13 +1,33 @@
-$viewports: (fullhd: (max: 3000px, min: 1440px), widescreen: (max: 1439px, min: 1280px), desktop: (max: 1279px, min: 1024px), tablet: (max: 1023px, min: 769px), mobile: (max: 768px, min: 0px))
+$max-fullhd: 3000px !default
+$min-fullhd: 1440px !default
+$viewport-fullhd: (max: $max-fullhd, min: $min-fullhd)
 
-$max-col: 12
-$green: #508026
-$green-light: #A0FF4C
+$max-widescreen: 1439px !default
+$min-widescreen: 1280px !default
+$viewport-widescreen: (max: $max-widescreen, min: $min-widescreen)
 
-$white: #F7F7F7
-$back: #000000
-$gray: #DDDDDD
+$max-desktop: 1279px !default
+$min-desktop: 1024px !default
+$viewport-desktop: (max: $max-desktop, min: $min-desktop)
+
+$max-tablet: 1023px !default
+$min-tablet: 769px !default
+$viewport-tablet: (max: $max-tablet, min: $min-tablet)
+
+$max-mobile: 768px !default
+$min-mobile: 0px !default
+$viewport-mobile: (max: $max-mobile, min: $min-mobile)
+
+$viewports: (fullhd: $viewport-fullhd, widescreen: $viewport-widescreen, desktop: $viewport-desktop, tablet: $viewport-tablet, mobile: $viewport-mobile)
+
+$max-col: 12 !default
+$green: #508026 !default
+$green-light: #A0FF4C !default
+
+$white: #F7F7F7 !default
+$back: #000000 !default
+$gray: #DDDDDD !default
     
-$purple: #AC4CFF
-$purple-light: #D6A6FF
-$purple-dark: #562680
+$purple: #AC4CFF !default
+$purple-light: #D6A6FF !default
+$purple-dark: #562680 !default

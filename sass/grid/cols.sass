@@ -6,8 +6,16 @@
     display: grid
     grid-template-columns: [start] repeat(#{$i}, 1fr) [end]
 
+  .grid-#{$i}-auto
+    display: grid
+    grid-template-columns: [start] repeat(#{$i}, auto) [end]
+
   .grid-#{$i} > *
     padding: 24px
+
+  .grid-#{$i}-auto > *
+    padding: 24px
+
   .narrow > *
     padding: 0
 

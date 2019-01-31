@@ -13,6 +13,9 @@ $mapa: (me: self, items: items)
   .#{$prefixClass}-up
     align-#{$ref}: start
 
+  .#{$prefixClass}-down
+    align-#{$ref}: end
+
   .#{$prefixClass}-left
     justify-#{$ref}: start
 
@@ -42,4 +45,4 @@ $mapa: (me: self, items: items)
   justify-content: space-between
 
 .items-between
-  justify-items: space-between
+  align-content: space-between
